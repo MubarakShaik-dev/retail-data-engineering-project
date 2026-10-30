@@ -1,0 +1,11 @@
+{
+	"name": "ls_akv_retail",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-retail-de-project.vault.azure.net/"
+		}
+	}
+}

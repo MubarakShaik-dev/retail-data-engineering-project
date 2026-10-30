@@ -1,0 +1,15 @@
+{
+	"name": "adf-retail-de-project-3",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "310a3871-8a73-465f-9b57-bf4fc61d7b65",
+		"tenantId": "c18a26a7-c611-45a0-add3-0f05151cade2"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"name": "ls_neon_postgres_retail",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PostgreSqlV2",
+		"typeProperties": {
+			"server": "ep-polished-river-b3oqnz2i-pooler.c-4.ap-southeast-1.aws.neon.tech",
+			"port": 5432,
+			"database": "db_retail_de_project",
+			"username": "mubarak",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "ls_akv_retail",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "neon-postgres-password"
+			},
+			"sslMode": 2,
+			"authenticationType": "Basic"
+		}
+	}
+}
