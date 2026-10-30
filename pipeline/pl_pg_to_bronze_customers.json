@@ -5,6 +5,8 @@
 			{
 				"name": "cpy_pg_customers_to_bronze",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -40,18 +42,50 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_pg_retail_customers",
+						"referenceName": "ds_pg_retail_source",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "ds_bronze_customers",
+						"referenceName": "ds_adls_bronze",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"parameters": {
+			"p_table_list": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"schema_name": "retail",
+						"table_name": "customers",
+						"folder_name": "customers"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "products",
+						"folder_name": "products"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "orders",
+						"folder_name": "orders"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "order_items",
+						"folder_name": "order_items"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "payments",
+						"folder_name": "payments"
+					}
+				]
+			}
+		},
 		"annotations": [],
 		"lastPublishTime": "2026-10-30T17:52:32Z"
 	},

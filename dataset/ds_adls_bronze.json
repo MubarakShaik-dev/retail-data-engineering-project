@@ -1,17 +1,31 @@
 {
-	"name": "ds_bronze_customers",
+	"name": "ds_adls_bronze",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_retail",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"p_folder_name": {
+				"type": "string"
+			},
+			"p_file_name": {
+				"type": "string"
+			}
 		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "customers.parquet",
-				"folderPath": "postgres/customers",
+				"fileName": {
+					"value": "@dataset().p_file_name",
+					"type": "Expression"
+				},
+				"folderPath": {
+					"value": "@concat('postgres/',dataset().p_folder_name)",
+					"type": "Expression"
+				},
 				"fileSystem": "bronze"
 			},
 			"compressionCodec": "snappy"

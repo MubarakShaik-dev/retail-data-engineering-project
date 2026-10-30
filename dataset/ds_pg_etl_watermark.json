@@ -1,0 +1,16 @@
+{
+	"name": "ds_pg_etl_watermark",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_neon_postgres_retail",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "PostgreSqlV2Table",
+		"schema": [],
+		"typeProperties": {
+			"schema": "retail",
+			"table": "etl_watermark"
+		}
+	}
+}

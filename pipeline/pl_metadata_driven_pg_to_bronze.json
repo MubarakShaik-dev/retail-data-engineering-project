@@ -1,0 +1,43 @@
+{
+	"name": "pl_metadata_driven_pg_to_bronze",
+	"properties": {
+		"parameters": {
+			"p_table_list": {
+				"type": "array",
+				"defaultValue": [
+					{
+						"schema_name": "retail",
+						"table_name": "customers",
+						"folder_name": "customers",
+						"primary_key": "customer_id"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "products",
+						"folder_name": "products",
+						"primary_key": "product_id"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "orders",
+						"folder_name": "orders",
+						"primary_key": "order_id"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "order_items",
+						"folder_name": "order_items",
+						"primary_key": "order_item_id"
+					},
+					{
+						"schema_name": "retail",
+						"table_name": "payments",
+						"folder_name": "payments",
+						"primary_key": "payment_id"
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}
